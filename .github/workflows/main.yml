@@ -3,12 +3,17 @@ name: CI
 # Run this workflow whenever the build may be affected
 on:
   push:
-    branches: [ main ]
+    branches: [ main, daily-driver ]
     paths-ignore:
       - 'doc/**'
       - '**.md'
   pull_request:
-    branches: [ main ]
+    branches: [ main, daily-driver ]
+    paths-ignore:
+      - 'doc/**'
+      - '**.md'
+  workflow_dispatch:
+    branches: [ main, daily-driver ]
     paths-ignore:
       - 'doc/**'
       - '**.md'
